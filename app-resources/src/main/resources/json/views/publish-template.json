@@ -1,5 +1,5 @@
 {
-  "name" : "Publisher template",
+  "name" : "Publisher template for OL3",
   "type" : "PUBLISH",
   "default" : false,
   "public" : false,
@@ -31,16 +31,58 @@
             "maparcgis": {
               "bundlePath": "/Oskari/packages/mapping/ol3/"
             },
+            "mapstats": {
+              "bundlePath": "/Oskari/packages/mapping/ol3/"
+            },
             "mapmodule": {
               "bundlePath": "/Oskari/packages/mapping/ol3/"
             },
-            "mapfull": {
+            "service-base": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "event-map-layer": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "request-map-layer": {
               "bundlePath": "/Oskari/packages/framework/bundle/"
             },
             "ui-components": {
               "bundlePath": "/Oskari/packages/framework/bundle/"
             },
+            "event-base": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "mapfull": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "core-base": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
             "oskariui": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "request-base": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "domain": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "core-map": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "request-map": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "sandbox-base": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "service-map": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "sandbox-map": {
+              "bundlePath": "/Oskari/packages/framework/bundle/"
+            },
+            "event-map": {
               "bundlePath": "/Oskari/packages/framework/bundle/"
             }
           }
@@ -48,15 +90,16 @@
       },
       "config": {
         "mapOptions": {
-          "srsName": "EPSG:3057",
           "maxExtent": {
             "bottom": -38980.4932,
             "left": -39925.6142,
             "right": 1001273.8754,
             "top": 986514.2978
           },
-          "resolutions": [7000,	5600,	4200,	2800,	1400,	840,	560,	280,	140,	70,	28,	14,	7,	2.8,	1.4,	0.56]
+          "units": "m",
+          "srsName": "EPSG:3057"
         },
+        "globalMapAjaxUrl": "[REPLACED BY HANDLER]",
         "plugins": [
           {
             "id": "Oskari.mapframework.bundle.mapmodule.plugin.LayersPlugin"
@@ -66,6 +109,8 @@
             "id": "Oskari.mapframework.bundle.mapwfs2.plugin.WfsLayerPlugin"
           }, {
             "id": "Oskari.mapframework.wmts.mapmodule.plugin.WmtsLayerPlugin"
+          }, {
+            "id": "Oskari.mapframework.bundle.mapstats.plugin.StatsLayerPlugin"
           }, {
             "id": "Oskari.mapframework.bundle.mapmodule.plugin.RealtimePlugin"
           }, {
@@ -88,10 +133,10 @@
         "layers": []
       },
       "state": {
-        "zoom": 3,
+        "zoom": 2,
         "srs": "EPSG:3057",
-        "east": 516943.746,
-        "north": 515003.0624,
+        "north": 516943.746,
+        "east": 515003.0624,
         "selectedLayers": []
       }
     },
@@ -144,7 +189,19 @@
       }
     },
     { "id" : "publishedstatehandler" },
-    { "id" : "drawtools" },
+    { "id" : "drawtools",
+      "startup": {
+        "title": "Drawtools OL3",
+        "bundlename": "drawtools",
+        "metadata": {
+          "Import-Bundle": {
+            "drawtools": {
+              "bundlePath": "/Oskari/packages/mapping/ol3/"
+            }
+          }
+        }
+      }
+    },
     { "id" : "routingService" },
     { "id" : "rpc" }
   ]

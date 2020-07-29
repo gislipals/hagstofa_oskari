@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.oskari.demo</groupId>
-        <artifactId>server-extension</artifactId>
-        <version>1.3.0</version>
+        <groupId>is.geoportal</groupId>
+        <artifactId>oskari</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>webapp-map</artifactId>
@@ -18,13 +18,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.oskari.demo</groupId>
+            <groupId>my.group</groupId>
             <artifactId>app-resources</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.oskari.demo</groupId>
-            <artifactId>app-specific-code</artifactId>
+            <groupId>is.geoportal</groupId>
+            <artifactId>server-extension</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -35,65 +35,38 @@
             <artifactId>icu4j</artifactId>
             <version>51.1</version>
         </dependency>
-
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-base</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-users</artifactId>
-        </dependency>
-
+        
+        <!-- oskari -->
         <dependency>
             <groupId>fi.nls.oskari.service</groupId>
             <artifactId>oskari-control-example</artifactId>
         </dependency>
 
+        <!-- support for user registration -->
+        <dependency>
+            <groupId>fi.nls.oskari.service</groupId>
+            <artifactId>oskari-control-users</artifactId>
+        </dependency>
+
+        <!-- support for myplaces functionality -->
         <dependency>
             <groupId>fi.nls.oskari.service</groupId>
             <artifactId>oskari-control-myplaces</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-admin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-routing</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>oskari-control-statistics</artifactId>
-        </dependency>
-        <!-- Statistics plugins -->
-        <dependency>
-            <groupId>fi.nls.oskari.service</groupId>
-            <artifactId>service-statistics-pxweb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.oskari.service</groupId>
-            <artifactId>service-statistics-unsd</artifactId>
-        </dependency>
-        <!-- /Statistics plugins -->
-
+        <!-- support for userlayer functionality -->
         <dependency>
             <groupId>org.oskari</groupId>
             <artifactId>control-userlayer</artifactId>
         </dependency>
 
+
+        <!-- admin routes -->
         <dependency>
-            <groupId>fi.nls.oskari</groupId>
-            <artifactId>service-logging</artifactId>
+            <groupId>fi.nls.oskari.service</groupId>
+            <artifactId>oskari-control-admin</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>fi.nls.oskari</groupId>
             <artifactId>servlet-map</artifactId>
@@ -106,10 +79,14 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <groupId>fi.nls.oskari</groupId>
+            <artifactId>service-logging</artifactId>
         </dependency>
-
+        <!-- /oskari -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
@@ -119,6 +96,7 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

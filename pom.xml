@@ -3,14 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.oskari.demo</groupId>
-    <artifactId>server-extension</artifactId>
-    <version>1.3.0</version>
+    <groupId>is.geoportal</groupId>
+    <artifactId>oskari-nlsi</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>demo.oskari.org</name>
+    <name>Geoportal for Iceland</name>
 
     <properties>
-        <oskari.version>1.56.0</oskari.version>
+        <oskari.version>1.51.1</oskari.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
@@ -19,12 +20,12 @@
         <repository>
             <id>oskari_org</id>
             <name>Oskari.org release repository</name>
-            <url>https://oskari.org/nexus/content/repositories/releases/</url>
+            <url>http://oskari.org/nexus/content/repositories/releases/</url>
         </repository>
         <repository>
             <id>oskari_org_snapshot</id>
             <name>Oskari.org snapshot repository</name>
-            <url>https://oskari.org/nexus/content/repositories/snapshots/</url>
+            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
@@ -64,8 +65,9 @@
 
     <modules>
         <module>app-resources</module>
-        <module>app-specific-code</module>
+        <module>server-extension</module>
         <module>webapp-map</module>
+        <module>webapp-transport</module>
     </modules>
 
 </project>

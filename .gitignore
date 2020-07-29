@@ -1,18 +1,36 @@
-*/bin/
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# archives
+template
+
+# stuff from Zakar
 .DS_Store
 */target/
 target/
 .settings/
 */.classpath
 */.project
+*/*.iml
 *.iml
 .classpath
 .idea
 .project
 /data/
-/test-output/
 /servlet-map/data/
+transport.log
 *pom.xml.versionsBackup
-*/nbactions.xml
-*/nb-configuration.xml
-.metadata
+/standalone-jetty/dist/public/oskari
+/standalone-jetty/dist/public/Oskari
+/standalone-jetty/dist/*.jar
+/bin/
